@@ -8,8 +8,8 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         <!-- Uncomment below to enable Native AOT compilation-->
-        <!--<PublishAot>true</PublishAot>-->
-        <!--<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>-->
+        <PublishAot>true</PublishAot>
+        <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     </PropertyGroup>
 
     <PropertyGroup>

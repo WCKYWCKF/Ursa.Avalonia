@@ -19,7 +19,7 @@ public partial class CustomDemoDialog : UserControl
     {
         base.OnAttachedToVisualTree(e);
         _viewModel = this.DataContext as CustomDemoDialogViewModel;
-        var visualLayerManager = this.FindAncestorOfType<VisualLayerManager>();
+        var visualLayerManager = TopLevel.GetTopLevel(this);
         if (visualLayerManager is not null && _viewModel is not null)
         {
             _viewModel.NotificationManager = new WindowNotificationManager(visualLayerManager) { MaxItems = 3 };

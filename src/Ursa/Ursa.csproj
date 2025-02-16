@@ -3,7 +3,6 @@
     <Import Project="../Package.props"/>
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net8</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
@@ -11,6 +10,7 @@
         <PackageIcon>irihi.png</PackageIcon>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>latest</LangVersion>
         <Authors>WCKYWCKF, IRIHI Technology</Authors>
@@ -14,14 +13,15 @@
 
             这个是一个Ursa拓展包。这个包整合并互相兼容了UrsaWindow和UrsaView与Avalonia.ReactiveUI的功能。【Avalonia.ReactiveUI参见：https://docs.avaloniaui.net/docs/concepts/reactiveui/】
         </Description>
-        <Version>1.0.2</Version>
+        <Version>1.1.5</Version>
         <RepositoryUrl>https://github.com/irihitech/Ursa.Avalonia</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <TargetFramework>net8.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.4"/>
     </ItemGroup>
 
     <ItemGroup>
