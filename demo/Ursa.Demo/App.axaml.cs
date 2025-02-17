@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Ursa.Demo.Converters;
 using Ursa.Demo.ViewModels;
 using Ursa.Demo.Views;
 

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using Ursa.Demo.Pages;
@@ -8,17 +9,33 @@ namespace Ursa.Demo.Converters;
 
 public class ViewLocator : IDataTemplate
 {
+    bool _isfirst = true;
+
     public Control? Build(object? param)
     {
         if (param is null) return null;
         var name = param.GetType().Name.Replace("ViewModel", "");
-        // var type = Type.GetType("Ursa.Demo.Pages." + name);
-        // if (type != null)
-        // {
-        //     return (Control)Activator.CreateInstance(type)!;
-        // }
+        try
+        {
+            var type = Type.GetType("Ursa.Demo.Pages." + name);
+            if (type != null)
+            {
+                return Activator.CreateInstance(type) as Control;
+            }
 
-        return GetViewByVM(param) ?? new TextBlock { Text = "Not Found ???: " + name };
+            return GetViewByVM(param) ?? new TextBlock { Text = "Not Found : " + name };
+        }
+        catch (Exception e)
+        {
+            var reslut = _isfirst
+                ? new TextBlock
+                {
+                    Text = $"Activator.CreateInstance failure ::{e}", TextWrapping = Avalonia.Media.TextWrapping.Wrap
+                }
+                : GetViewByVM(param) ?? new TextBlock { Text = "Not Found : " + name };
+            _isfirst = false;
+            return reslut;
+        }
     }
 
     public bool Match(object? data)
